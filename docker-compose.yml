@@ -1,4 +1,5 @@
 # https://qiita.com/A-Kira/items/d2f9c8cef9346cb32229
+# docker-compose run --rm node sh -c "npm install -g create-react-app && create-react-app react-sample"
 version: '3.9'
 
 services:
@@ -9,3 +10,6 @@ services:
     command: sh -c "cd react-sample && yarn start"
     ports:
       - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      

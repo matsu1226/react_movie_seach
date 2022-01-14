@@ -22,7 +22,7 @@ const Search = (props) => {
   }
 
   return (
-    <from className="search">
+    <form className="search">
       {/* search window */}
       <input 
         value={searchValue}
@@ -36,7 +36,7 @@ const Search = (props) => {
         type="submit"
         value="SEARCH"
       />
-    </from>
+    </form>
   );
 };
 

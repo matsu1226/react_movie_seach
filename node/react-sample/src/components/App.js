@@ -4,9 +4,9 @@ import Header from "./Header";
 import Movie from "./Movie";
 import Search from "./Search";
 
-const MOVIE_API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=7cafa973"
+const MOVIE_API_URL = "http://www.omdbapi.com/?s=man&apikey=7cafa973"
 
-const App =() => {
+const App = () => {
   const [loading, setLoading] = useState(true);   //読み込みの状態を処理
   const [movies, setMovies] = useState([]);       //serverからgetしたmovieを処理
   const [errorMessage, setErrorMessage] = useState(null);   // API requestのerror stateを処理
@@ -21,7 +21,7 @@ const App =() => {
         setLoading(false);
       })
       .catch(error => {                   // if failure
-        console.log("MOVIE情報の取得に失敗しました")
+        console.log("MOVIE情報の取得に失敗しました??!")
       });
   }, []);
 
@@ -29,9 +29,9 @@ const App =() => {
     setLoading(true);
     setErrorMessage(null);
 
-    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
+    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=7cafa973`)
       .then(response => response.json())
-      .thne(jsonResponse => {
+      .then(jsonResponse => {
         if (jsonResponse.Response === "True") {
           setMovies(jsonResponse.Search);
           setLoading(false);
@@ -47,7 +47,7 @@ const App =() => {
     <div className="App">
       <Header text="HOOKED" />
       <Search search={search} />
-      <p className="App-intro">Shareing a few of our favorite movies!</p>
+      <p className="App-intro">Sharing a few of our favorite movies!</p>
       <div className="movies">
         {loading && !errorMessage ? (
           <span>loading...</span>

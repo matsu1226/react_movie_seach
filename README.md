@@ -1,5 +1,6 @@
 # react_movie_search
 外部API+Reactのチュートリアル的なもの。<br>
+https://www.freecodecamp.org/news/how-to-build-a-movie-search-app-using-react-hooks-24eb72ddfaf7/
 <br>
 
 ## 参照記事
